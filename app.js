@@ -6,16 +6,12 @@ const  logger = require('morgan');
 const db = require("./models/index");
 
 const  allRouter = require('./routes/index');
-// const userRouter = require('./routes/users.route');
-// const clubRouter = require('./routes/club.route');
-// const coachRouter = require('./routes/coach.route');
-// const playerRouter = require('./routes/player.route');
 
 
 var app = express();
 
 // db.sequelize.sync({ force: true })
-db.sequelize.sync({alter: true})
+db.sequelize.sync()
   .then(() => {
     console.log("Synced db.");
   })
